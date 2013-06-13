@@ -161,11 +161,11 @@ If you are finished with binding parameters you have to call ``execute()`` on th
 will trigger a query to the database. After the query is finished you can access the results
 of this query using the fetch API of a statement:
 
--   ``fetch($fetchStyle)`` - Retrieves the next row from the statement or false if there are none.
+-   ``fetch($fetchMode)`` - Retrieves the next row from the statement or false if there are none.
     Moves the pointer forward one row, so that consecutive calls will always return the next row.
 -   ``fetchColumn($column)`` - Retrieves only one column of the next row specified by column index.
     Moves the pointer forward one row, so that consecutive calls will always return the next row.
--   ``fetchAll($fetchStyle)`` - Retrieves all rows from the statement.
+-   ``fetchAll($fetchMode)`` - Retrieves all rows from the statement.
 
 The fetch API of a prepared statement obviously works only for ``SELECT`` queries.
 
@@ -175,6 +175,12 @@ methods. See the API section below on details how to use them.
 
 Additionally there are lots of convenience methods for data-retrieval and manipulation
 on the Connection, which are all described in the API section below.
+
+Fetch mode
+-------------
+
+The $fetchMode values can be found in the \Doctrine\ORM\AbstractQuery class. 
+
 
 Binding Types
 -------------
